@@ -1,0 +1,27 @@
+{
+    "name": "smit-backend/eloquent-lens",
+    "description": "Deep query analyzer for Laravel Eloquent models. Detects N+1 loops, memory spikes, and outputs actionable query logs.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "smit-backend",
+            "homepage": "https://github.com/smit-backend"
+        }
+    ],
+    "require": {
+        "php": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "SmitBackend\\EloquentLens\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SmitBackend\\EloquentLens\\PackageServiceProvider"
+            ]
+        }
+    }
+}
