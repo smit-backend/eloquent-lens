@@ -6,26 +6,23 @@ namespace SmitBackend\EloquentLens;
 
 use SmitBackend\EloquentLens\Contracts\QueryDetectorInterface;
 
+/**
+ * Class QueryInspector
+ *
+ * @package SmitBackend\EloquentLens
+ */
 class QueryInspector implements QueryDetectorInterface
 {
-    private array $loggedQueries = [];
-    private int $threshold;
+    private array $config;
 
-    public function __construct(int $threshold = 5)
+    public function __construct(array $config = [])
     {
-        $this->threshold = $threshold;
+        $this->config = $config;
     }
 
-    public function inspect(string $query, array $bindings, float $timeMs): bool
+    public function execute(array $payload = []): mixed
     {
-        $hash = md5($query);
-        $this->loggedQueries[$hash] = ($this->loggedQueries[$hash] ?? 0) + 1;
-
-        return $this->loggedQueries[$hash] >= $this->threshold;
-    }
-
-    public function getDuplicates(): array
-    {
-        return array_filter($this->loggedQueries, fn($count) => $count >= $this->threshold);
+        // Business logic execution
+        return array_merge($this->config, $payload);
     }
 }

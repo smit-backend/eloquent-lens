@@ -4,20 +4,17 @@ declare(strict_types=1);
 
 namespace SmitBackend\EloquentLens;
 
-/**
- * EloquentLens: Query Optimizer & N+1 Detector Service Provider
- *
- * @author smit-backend
- */
+use SmitBackend\EloquentLens\Contracts\QueryDetectorInterface;
+
 class PackageServiceProvider
 {
     public function register(): void
     {
-        // Register configuration and core bindings
+        // Bind core service singleton
     }
 
     public function boot(): void
     {
-        // Boot service routes, views, or commands
+        // Boot routes and configuration publishing
     }
 }
