@@ -1,12 +1,7 @@
 <?php
 
 return [
-    enabled => env(ELOQUENT_LENS_ENABLED, true),
-    threshold => env(ELOQUENT_LENS_THRESHOLD, 5),
-    log_channel => env(ELOQUENT_LENS_LOG_CHANNEL, daily),
-    ignore_tables => [
-        migrations,
-        sessions,
-        jobs,
-    ],
+    'enabled' => env('ELOQUENT_LENS_ENABLED', true),
+    'timeout' => env('ELOQUENT_LENS_TIMEOUT', 30),
+    'log_channel' => env('ELOQUENT_LENS_LOG', 'stack'),
 ];
