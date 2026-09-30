@@ -11,8 +11,8 @@
 
 ## 🚀 Key Highlights & Features
 
-- **Production-Ready Architecture:** Designed specifically with clean, decoupled architecture.
-- **Enterprise Resiliency:** Built-in safeguards, structured error reporting, and observability.
+- **Production-Grade Architecture:** Designed specifically with decoupled, testable interfaces.
+- **Enterprise Resiliency:** Built-in safeguards, structured exception handling, and observability.
 - **Zero-Friction Setup:** Configurable via sensible defaults or deep environment customization.
 - **Strictly Typed:** Complete type declarations compatible with PHP 8.2+ and modern standards.
 
@@ -22,10 +22,10 @@
 
 ```mermaid
 graph TD
-    Client[Incoming Request / Event] --> Gate[Input Validator & Security Guard]
+    Client[Incoming Request / Trigger] --> Gate[Input Validator & Security Guard]
     Gate --> CoreEngine[EloquentLens: Query Optimizer & N+1 Detector]
     CoreEngine --> Adapter[External Storage / Cloud / DB]
-    CoreEngine --> Observer[Metrics & Audit Logger]
+    CoreEngine --> Observer[Telemetry & Audit Logger]
 ```
 
 ---
